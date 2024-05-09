@@ -1,3 +1,8 @@
+## 0.4.1
+
+Add image to README
+Fix Baseball Bat being classed as an electrical item
+
 ## 0.4.0
 
 All one handed plushies use battery power.

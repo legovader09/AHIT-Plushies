@@ -20,7 +20,7 @@ namespace AHIT_Plushies
         public GeneralSettings settings;
 
         private List<Item> items;
-        private List<string> weaponsList = new List<string>() { "Umbrella", "Baseball Bat" };
+        private List<string> weaponsList = new List<string>() { "Umbrella", "BaseballBat" };
 
         void Awake()
         {
