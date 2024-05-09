@@ -1,7 +1,11 @@
+## 0.4.2
+
+- Fix changelog visual bug
+
 ## 0.4.1
 
-Add image to README
-Fix Baseball Bat being classed as an electrical item
+- Add image to README
+- Fix Baseball Bat being classed as an electrical item
 
 ## 0.4.0
 
