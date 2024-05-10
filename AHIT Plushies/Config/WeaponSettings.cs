@@ -17,8 +17,10 @@ public class WeaponSettings : BaseConfig
         const string spawnRateDesc = "Set the spawn rate of this weapon";
         _weaponsList["UmbrellaDamage"] = Bind(cfg, "Weapon Settings", "Umbrella Damage", 1, description);
         _weaponsList["BaseballBatDamage"] = Bind(cfg, "Weapon Settings", "Baseball Bat Damage", 1, description);
+        _weaponsList["TimePieceDamage"] = Bind(cfg, "Weapon Settings", "Time Piece Bat Damage", 3, description);
         _weaponsList["UmbrellaSpawnRate"] = Bind(cfg, "Weapon Settings", "Umbrella Spawn Rate", 10, spawnRateDesc);
         _weaponsList["BaseballBatSpawnRate"] = Bind(cfg, "Weapon Settings", "Baseball Bat Spawn Rate", 10, spawnRateDesc);
+        _weaponsList["TimePieceSpawnRate"] = Bind(cfg, "Weapon Settings", "Time Piece Spawn Rate", 1, spawnRateDesc);
     }
 
     internal ConfigEntry<int> GetValue(string weapon)

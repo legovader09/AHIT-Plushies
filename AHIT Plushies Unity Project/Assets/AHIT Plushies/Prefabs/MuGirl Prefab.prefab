@@ -172,7 +172,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3209465222e3c944a9224ea1ce177313, type: 3}
   - {fileID: 8300000, guid: 027446b430154364d9057c813b1e1991, type: 3}
   noiseSFXFar: []
-  noiseRange: 4
+  noiseRange: 5
   maxLoudness: 0.3
   minLoudness: 0.3
   minPitch: 1

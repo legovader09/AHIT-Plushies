@@ -18,7 +18,7 @@ MonoBehaviour:
   twoHanded: 0
   twoHandedAnimation: 0
   canBeGrabbedBeforeGameStart: 1
-  weight: 1.05
+  weight: 1.15
   itemIsTrigger: 1
   holdButtonUse: 0
   itemSpawnsOnGround: 1
@@ -29,7 +29,7 @@ MonoBehaviour:
   highestSalePercentage: 0
   maxValue: 250
   minValue: 125
-  spawnPrefab: {fileID: 4667624205334053141, guid: eb02c43a2d9ee144eb4a2a7d8be921e7,
+  spawnPrefab: {fileID: 4667624205334053141, guid: 640b8beb134eaac4faddc20189d07dfe,
     type: 3}
   requiresBattery: 1
   batteryUsage: 0.05
@@ -52,7 +52,7 @@ MonoBehaviour:
   isDefensiveWeapon: 0
   toolTips:
   - 'Squeeze: [LMB]'
-  verticalOffset: 0
+  verticalOffset: -0.02
   floorYOffset: 0
   allowDroppingAheadOfPlayer: 1
   restingRotation: {x: 0, y: 0, z: 0}

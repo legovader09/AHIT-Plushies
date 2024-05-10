@@ -18,7 +18,7 @@ MonoBehaviour:
   twoHanded: 0
   twoHandedAnimation: 0
   canBeGrabbedBeforeGameStart: 1
-  weight: 1.05
+  weight: 1.2
   itemIsTrigger: 1
   holdButtonUse: 0
   itemSpawnsOnGround: 1
@@ -51,8 +51,8 @@ MonoBehaviour:
   saveItemVariable: 0
   isDefensiveWeapon: 0
   toolTips:
-  - 'Steal personal data: [LMB]'
-  verticalOffset: 0
+  - 'Tell him about your <UNINTELLIGABLE>: [LMB]'
+  verticalOffset: -0.02
   floorYOffset: 0
   allowDroppingAheadOfPlayer: 1
   restingRotation: {x: 0, y: 0, z: 0}

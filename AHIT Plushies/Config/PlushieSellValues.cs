@@ -5,6 +5,16 @@ namespace AHIT_Plushies.Config
     public class PlushieSellValues : BaseConfig
     {
         private readonly Dictionary<string, ConfigEntry<int>> _sellValueList = new();
+        private const string SectionPlushies = "Plushie Sell Prices";
+        private const string SectionBigPlushies = "Big Plushie Sell Prices";
+        private const string SectionSmallPlushies = "Small Plushie Sell Prices";
+        private const string SectionWeapons = "Weapon Sell Prices";
+        private const int DefaultMin = 50;
+        private const int DefaultMax = 100;
+        private const int DefaultBigMin = 90;
+        private const int DefaultBigMax = 140;
+        private const int DefaultSmallMin = 30;
+        private const int DefaultSmallMax = 80;
         
         public PlushieSellValues(ConfigFile cfg)
         {
@@ -13,34 +23,43 @@ namespace AHIT_Plushies.Config
 
         internal sealed override void SetBindings(ConfigFile cfg)
         {
-            const string sectionPlushies = "Plushie Sell Prices";
-            const string sectionMisc = "Weapon Sell Prices";
-            const int defaultMin = 50;
-            const int defaultMax = 100;
-            _sellValueList["HatKidPlushieMinValue"] = Bind(cfg, sectionPlushies, "Hat Kid Min Value", defaultMin);
-            _sellValueList["HatKidPlushieMaxValue"] = Bind(cfg, sectionPlushies, "Hat Kid Max Value", defaultMax);
-            _sellValueList["ConductorPlushieMinValue"] = Bind(cfg, sectionPlushies, "Conductor Min Value", defaultMin);
-            _sellValueList["ConductorPlushieMaxValue"] = Bind(cfg, sectionPlushies, "Conductor Max Value", defaultMax);
-            _sellValueList["MustacheGirlPlushieMinValue"] = Bind(cfg, sectionPlushies, "Mustache Girl Min Value", defaultMin);
-            _sellValueList["MustacheGirlPlushieMaxValue"] = Bind(cfg, sectionPlushies, "Mustache Girl Max Value", defaultMax);
-            _sellValueList["CAWPlushieMinValue"] = Bind(cfg, sectionPlushies, "CAW Agent Min Value", defaultMin);
-            _sellValueList["CAWPlushieMaxValue"] = Bind(cfg, sectionPlushies, "CAW Agent Max Value", defaultMax);
-            _sellValueList["BowKidPlushieMinValue"] = Bind(cfg, sectionPlushies, "Bow Kid Min Value", defaultMin);
-            _sellValueList["BowKidPlushieMaxValue"] = Bind(cfg, sectionPlushies, "Bow Kid Max Value", defaultMax);
-            _sellValueList["SealPlushieMinValue"] = Bind(cfg, sectionPlushies, "Seal Min Value", defaultMin);
-            _sellValueList["SealPlushieMaxValue"] = Bind(cfg, sectionPlushies, "Seal Max Value", defaultMax);
+            _sellValueList["BowKidPlushieMinValue"] = Bind(cfg, SectionPlushies, "Bow Kid Min Value", DefaultMin);
+            _sellValueList["BowKidPlushieMaxValue"] = Bind(cfg, SectionPlushies, "Bow Kid Max Value", DefaultMax);
+            _sellValueList["CAWPlushieMinValue"] = Bind(cfg, SectionPlushies, "CAW Agent Min Value", DefaultMin);
+            _sellValueList["CAWPlushieMaxValue"] = Bind(cfg, SectionPlushies, "CAW Agent Max Value", DefaultMax);
+            _sellValueList["ConductorPlushieMinValue"] = Bind(cfg, SectionPlushies, "Conductor Min Value", DefaultMin);
+            _sellValueList["ConductorPlushieMaxValue"] = Bind(cfg, SectionPlushies, "Conductor Max Value", DefaultMax);
+            _sellValueList["FireSpiritPlushieMinValue"] = Bind(cfg, SectionPlushies, "Fire Spirit Min Value", DefaultMin);
+            _sellValueList["FireSpiritPlushieMaxValue"] = Bind(cfg, SectionPlushies, "Fire Spirit Max Value", DefaultMax);
+            _sellValueList["FishDudePlushieMinValue"] = Bind(cfg, SectionPlushies, "Fish Dude Min Value", DefaultMin);
+            _sellValueList["FishDudePlushieMaxValue"] = Bind(cfg, SectionPlushies, "Fish Dude Max Value", DefaultMax);
+            _sellValueList["HatKidPlushieMinValue"] = Bind(cfg, SectionPlushies, "Hat Kid Min Value", DefaultMin);
+            _sellValueList["HatKidPlushieMaxValue"] = Bind(cfg, SectionPlushies, "Hat Kid Max Value", DefaultMax);
+            _sellValueList["MustacheGirlPlushieMinValue"] = Bind(cfg, SectionPlushies, "Mustache Girl Min Value", DefaultMin);
+            _sellValueList["MustacheGirlPlushieMaxValue"] = Bind(cfg, SectionPlushies, "Mustache Girl Max Value", DefaultMax);
+            
+            _sellValueList["GrandkidPlushieMinValue"] = Bind(cfg, SectionSmallPlushies, "Grandkid Min Value", DefaultSmallMin);
+            _sellValueList["GrandkidPlushieMaxValue"] = Bind(cfg, SectionSmallPlushies, "Grandkid Max Value", DefaultSmallMax);
+            _sellValueList["MadCrowPlushieMinValue"] = Bind(cfg, SectionSmallPlushies, "Mad Crow Min Value", DefaultSmallMin);
+            _sellValueList["MadCrowPlushieMaxValue"] = Bind(cfg, SectionSmallPlushies, "Mad Crow Max Value", DefaultSmallMax);
+            _sellValueList["SealPlushieMinValue"] = Bind(cfg, SectionSmallPlushies, "Seal Min Value", DefaultSmallMin);
+            _sellValueList["SealPlushieMaxValue"] = Bind(cfg, SectionSmallPlushies, "Seal Max Value", DefaultSmallMax);
+            
+            _sellValueList["DJGroovesPlushieMinValue"] = Bind(cfg, SectionBigPlushies, "DJ Grooves Min Value", DefaultBigMin);
+            _sellValueList["DJGroovesPlushieMaxValue"] = Bind(cfg, SectionBigPlushies, "DJ Grooves Max Value", DefaultBigMax);
+            _sellValueList["EmpressPlushieMinValue"] = Bind(cfg, SectionBigPlushies, "Empress Min Value", DefaultBigMin);
+            _sellValueList["EmpressPlushieMaxValue"] = Bind(cfg, SectionBigPlushies, "Empress Max Value", DefaultBigMax);
+            _sellValueList["MafiaDudePlushieMinValue"] = Bind(cfg, SectionBigPlushies, "Mafia Dude Min Value", DefaultBigMin);
+            _sellValueList["MafiaDudePlushieMaxValue"] = Bind(cfg, SectionBigPlushies, "Mafia Dude Max Value", DefaultBigMax);
+            _sellValueList["SnatcherPlushieMinValue"] = Bind(cfg, SectionBigPlushies, "Snatcher Min Value", DefaultBigMin);
+            _sellValueList["SnatcherPlushieMaxValue"] = Bind(cfg, SectionBigPlushies, "Snatcher Max Value", DefaultBigMax);
 
-            _sellValueList["SnatcherPlushieMinValue"] = Bind(cfg, sectionPlushies, "Snatcher Min Value", 90);
-            _sellValueList["SnatcherPlushieMaxValue"] = Bind(cfg, sectionPlushies, "Snatcher Max Value", 140);
-            _sellValueList["DJGroovesPlushieMinValue"] = Bind(cfg, sectionPlushies, "DJ Grooves Min Value", 90);
-            _sellValueList["DJGroovesPlushieMaxValue"] = Bind(cfg, sectionPlushies, "DJ Grooves Max Value", 140);
-            _sellValueList["EmpressPlushieMinValue"] = Bind(cfg, sectionPlushies, "Empress Min Value", 90);
-            _sellValueList["EmpressPlushieMaxValue"] = Bind(cfg, sectionPlushies, "Empress Max Value", 140);
-
-            _sellValueList["UmbrellaMinValue"] = Bind(cfg, sectionMisc, "Umbrella Min Value", defaultMin);
-            _sellValueList["UmbrellaMaxValue"] = Bind(cfg, sectionMisc, "Umbrella Max Value", defaultMax);
-            _sellValueList["BaseballBatMinValue"] = Bind(cfg, sectionMisc, "Baseball Bat Min Value", defaultMin);
-            _sellValueList["BaseballBatMaxValue"] = Bind(cfg, sectionMisc, "Baseball Bat Max Value", defaultMax);
+            _sellValueList["UmbrellaMinValue"] = Bind(cfg, SectionWeapons, "Umbrella Min Value", DefaultMin);
+            _sellValueList["UmbrellaMaxValue"] = Bind(cfg, SectionWeapons, "Umbrella Max Value", DefaultMax);
+            _sellValueList["BaseballBatMinValue"] = Bind(cfg, SectionWeapons, "Baseball Bat Min Value", DefaultMin);
+            _sellValueList["BaseballBatMaxValue"] = Bind(cfg, SectionWeapons, "Baseball Bat Max Value", DefaultMax);
+            _sellValueList["TimePieceMinValue"] = Bind(cfg, SectionWeapons, "Time Piece Bat Min Value", DefaultBigMin);
+            _sellValueList["TimePieceMaxValue"] = Bind(cfg, SectionWeapons, "Time Piece Bat Max Value", DefaultBigMax);
         }
 
         internal ConfigEntry<int> GetSellValue(string propertyName)

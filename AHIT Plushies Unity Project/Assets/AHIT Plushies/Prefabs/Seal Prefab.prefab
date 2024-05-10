@@ -171,11 +171,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fd98f96c2328b364dbce2f1ec56c3c9b, type: 3}
   - {fileID: 8300000, guid: 668d5817b384d224abd637b5a087cf28, type: 3}
   noiseSFXFar: []
-  noiseRange: 4
+  noiseRange: 5
   maxLoudness: 0.3
   minLoudness: 0.3
-  minPitch: 0.9
-  maxPitch: 0.9
+  minPitch: 1
+  maxPitch: 1
   triggerAnimator: {fileID: 0}
 --- !u!114 &1512121693538587650
 MonoBehaviour:

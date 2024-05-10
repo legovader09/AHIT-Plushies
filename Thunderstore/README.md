@@ -1,5 +1,5 @@
 ## About Mod
-Adds 9 A Hat in Time plushies as scrap, with various voice lines, and 2 weapons to the game. 
+Adds 14 A Hat in Time plushies as scrap, with various voice lines, and 3 weapons to the game. 
 ![Plushie Family](https://raw.githubusercontent.com/legovader09/AHIT-Plushies/main/GitHub/plushies.webp "Plushies")
 
 Featuring:
@@ -8,7 +8,12 @@ Featuring:
 - The Conductor
 - DJ Grooves
 - The Empress
+- Fire Spirit
+- Fish Dude
+- The Conductor's Grandkid
 - Hat Kid
+- Mad Crow
+- Mafia Dude
 - Mustache Girl
 - Cruise Seal
 - Snatcher
@@ -16,6 +21,7 @@ Featuring:
 Weapons: 
 - Hat Kid's Umbrella
 - Nyakuza Baseball Bat
+- Time Piece
 
 ## Credits:
 - https://www.deviantart.com/johno58/art/C-A-W-agent-979178694 - CAW Agent Logo

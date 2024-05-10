@@ -3,6 +3,7 @@ using BepInEx;
 using LethalLib.Modules;
 using System.Reflection;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace AHIT_Plushies
 {
@@ -14,19 +15,19 @@ namespace AHIT_Plushies
         private const string ModGuid = "Doomnik.AHITPlushies";
         private const string ModName = "AHIT Plushies";
         private const string ModVersion = "1.0.0.0";
+        private GeneralSettings _settings;
         private PlushieSpawnRates _plushieRates;
         private PlushieSellValues _plushieValues;
-        private GeneralSettings _settings;
         private WeaponSettings _weaponSettings;
 
         private List<Item> _items;
-        private readonly List<string> _weaponsList = ["Umbrella", "BaseballBat"];
+        private readonly List<string> _weaponsList = ["Umbrella", "BaseballBat", "TimePiece"];
 
         void Awake()
         {
+            _settings = new(Config);
             _plushieRates = new(Config);
             _plushieValues = new(Config);
-            _settings = new(Config);
             _weaponSettings = new(Config);
 
             instance = this;
@@ -47,7 +48,13 @@ namespace AHIT_Plushies
                 bundle.LoadAsset<Item>("Assets/AHIT Plushies/BowKidPlushie.asset"),
                 bundle.LoadAsset<Item>("Assets/AHIT Plushies/DJGroovesPlushie.asset"),
                 bundle.LoadAsset<Item>("Assets/AHIT Plushies/EmpressPlushie.asset"),
-                bundle.LoadAsset<Item>("Assets/AHIT Plushies/SealPlushie.asset")
+                bundle.LoadAsset<Item>("Assets/AHIT Plushies/SealPlushie.asset"),
+                bundle.LoadAsset<Item>("Assets/AHIT Plushies/FishDudePlushie.asset"),
+                bundle.LoadAsset<Item>("Assets/AHIT Plushies/FireSpiritPlushie.asset"),
+                bundle.LoadAsset<Item>("Assets/AHIT Plushies/MadCrowPlushie.asset"),
+                bundle.LoadAsset<Item>("Assets/AHIT Plushies/MafiaDudePlushie.asset"),
+                bundle.LoadAsset<Item>("Assets/AHIT Plushies/GrandkidPlushie.asset"),
+                bundle.LoadAsset<Item>("Assets/AHIT Plushies/TimePiece.asset"),
             ];
 
             foreach (var item in _items)
@@ -55,6 +62,7 @@ namespace AHIT_Plushies
                 LoadConfigValues(item);
                 NetworkPrefabs.RegisterNetworkPrefab(item.spawnPrefab);
                 Utilities.FixMixerGroups(item.spawnPrefab);
+                item.spawnPrefab.GetComponent<GrabbableObject>().customGrabTooltip = $"Grab {item.itemName}";
                 
                 if (_weaponsList.Contains(item.name))
                 {
@@ -86,7 +94,15 @@ namespace AHIT_Plushies
 
         private void LoadConfigValues(Item item)
         {
-            item.requiresBattery = !_weaponsList.Contains(item.name) && !item.twoHanded && _settings.PlushiesRequireBattery.Value;
+            if (!_weaponsList.Contains(item.name))
+            {
+                item.requiresBattery = !item.twoHanded && _settings.PlushiesRequireBattery.Value;
+                if (item.requiresBattery && _settings.PlushiesSpawnWithRandomCharge.Value)
+                {
+                    item.spawnPrefab.GetComponent<GrabbableObject>()
+                        .insertedBattery.charge = (float)Random.Range(_settings.PlushiesMinimumChargeOnSpawn.Value, 100) / 100;
+                }
+            }
             item.minValue = (int)(_plushieValues.GetSellValue($"{item.name}MinValue").Value * 2.5);
             item.maxValue = (int)(_plushieValues.GetSellValue($"{item.name}MaxValue").Value * 2.5);
         }
