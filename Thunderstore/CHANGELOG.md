@@ -1,3 +1,7 @@
+## 0.5.1
+
+Fix C.A.W. Agent plush eyes texture
+
 ## 0.5.0
 
 Added new general settings:
