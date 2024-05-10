@@ -5,15 +5,17 @@ namespace AHIT_Plushies
     public class TimePiece : MonoBehaviour
     {
         private Animator _animator;
-        void Start ()
+        private Shovel _shovel;
+
+        void Start()
         {
             _animator = GetComponentInChildren<Animator>();
+            _shovel = GetComponent<Shovel>();
         }
 
         void LateUpdate()
         {
-            var shovel = GetComponent<Shovel>();
-            var isHeld = shovel.isHeld || shovel.isHeldByEnemy;
+            var isHeld = _shovel.isHeld || _shovel.isHeldByEnemy;
             _animator.SetBool("IsHeld", isHeld);
         }
     }

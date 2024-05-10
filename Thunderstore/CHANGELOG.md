@@ -1,3 +1,7 @@
+## 0.5.3
+
+Readjusting the way the time piece animation gets handled
+
 ## 0.5.2
 
 Added Time Piece rotation animation
