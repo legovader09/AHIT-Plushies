@@ -2,18 +2,17 @@
 
 namespace AHIT_Plushies.Config
 {
-    public abstract class BaseConfig(ConfigFile cfg)
+    public abstract class BaseConfig
     {
         internal abstract void SetBindings(ConfigFile cfg);
-        internal virtual ConfigEntry<T> Bind<T>(ConfigFile cfg, string section, string key, T defaultValue)
+        internal virtual ConfigEntry<T> Bind<T>(ConfigFile cfg, string section, string key, T defaultValue, string description = "")
         {
             return cfg.Bind(
                 section: section,
                 key: key,
                 defaultValue: defaultValue,
-                configDescription: new ConfigDescription
-                (
-                    $"Set the spawn weight of plushies on {key}.", typeof(T) != typeof(bool) ? new AcceptableValueRange<int>(0, 100) : null
+                configDescription: new(
+                    description, typeof(T) != typeof(bool) ? new AcceptableValueRange<int>(0, 100) : null
                 )
             );
         }
