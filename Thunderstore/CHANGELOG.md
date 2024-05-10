@@ -1,3 +1,7 @@
+## 0.5.4
+
+Revert floor offset as it caused plushies to clip through the ship floor
+
 ## 0.5.3
 
 Readjusting the way the time piece animation gets handled
