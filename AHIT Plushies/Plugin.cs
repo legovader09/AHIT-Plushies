@@ -1,5 +1,6 @@
 ﻿using AHIT_Plushies.Config;
 using BepInEx;
+using HarmonyLib;
 using LethalLib.Modules;
 using System.Reflection;
 using UnityEngine;
@@ -10,7 +11,6 @@ namespace AHIT_Plushies
     [BepInPlugin(ModGuid, ModName, ModVersion)]
     public class Plugin : BaseUnityPlugin
     {
-        // public Harmony Harmony = new Harmony("Doomnik.AHITPlushies");
         public static Plugin instance;
         private const string ModGuid = "Doomnik.AHITPlushies";
         private const string ModName = "AHIT Plushies";
@@ -31,7 +31,6 @@ namespace AHIT_Plushies
             _weaponSettings = new(Config);
 
             instance = this;
-            //harmony.PatchAll(typeof(Weapon));
 
             var assetDir = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, "ahitplushscrap");
             var bundle = AssetBundle.LoadFromFile(assetDir);
@@ -63,6 +62,11 @@ namespace AHIT_Plushies
                 NetworkPrefabs.RegisterNetworkPrefab(item.spawnPrefab);
                 Utilities.FixMixerGroups(item.spawnPrefab);
                 item.spawnPrefab.GetComponent<GrabbableObject>().customGrabTooltip = $"Grab {item.itemName}";
+
+                if (item.name == "TimePiece")
+                {
+                    item.spawnPrefab.AddComponent<TimePiece>();
+                }
                 
                 if (_weaponsList.Contains(item.name))
                 {

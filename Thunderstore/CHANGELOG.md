@@ -1,3 +1,9 @@
+## 0.5.2
+
+Added Time Piece rotation animation
+
+Fixed typo in the configs
+
 ## 0.5.1
 
 Fix C.A.W. Agent plush eyes texture
@@ -21,7 +27,7 @@ Added 4 new characters:
 - Mafia Dude
 - The Conductor's Grandkid (no voice lines)
 
-Added Time Piece weapon with extremely rare spawn chance and 3x shovel damage. Future plans involve turning this item into a throwable object rather than a melee weapon
+Added Time Piece weapon with extremely rare spawn chance and 3x shovel damage (both configurable). Future plans involve turning this item into a throwable object rather than a melee weapon
 
 Made all items hover slightly closer to the ground.
 

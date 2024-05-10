@@ -30,6 +30,9 @@
     <Reference Include="UnityEngine">
       <HintPath>G:\Games\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>G:\Games\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
       <HintPath>G:\Games\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
