@@ -9,12 +9,12 @@ namespace AHIT_Plushies.Config
         private const string SectionBigPlushies = "Big Plushie Sell Prices";
         private const string SectionSmallPlushies = "Small Plushie Sell Prices";
         private const string SectionWeapons = "Weapon Sell Prices";
-        private const int DefaultMin = 50;
-        private const int DefaultMax = 100;
-        private const int DefaultBigMin = 90;
-        private const int DefaultBigMax = 140;
+        private const int DefaultMin = 40;
+        private const int DefaultMax = 80;
+        private const int DefaultBigMin = 60;
+        private const int DefaultBigMax = 110;
         private const int DefaultSmallMin = 30;
-        private const int DefaultSmallMax = 80;
+        private const int DefaultSmallMax = 70;
         
         public PlushieSellValues(ConfigFile cfg)
         {

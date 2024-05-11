@@ -8,6 +8,17 @@
 	<LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <Target Name="CustomFolderDeploy" AfterTargets="AfterBuild" BeforeTargets="MSDeployPublish">
+	<PropertyGroup>
+	  <CustomFolder>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\obj\Debug\netstandard2.1'))</CustomFolder>
+	</PropertyGroup>
+	<CreateItem Include="$(CustomFolder)\AHIT Plushies.dll">
+	  <Output TaskParameter="Include" ItemName="CustomFiles" />
+	</CreateItem>
+	  <Copy SourceFiles="@(CustomFiles)" DestinationFolder="$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\..\Thunderstore\BepInEx\plugins'))" SkipUnchangedFiles="True" ContinueOnError="False" />
+	  <Copy SourceFiles="@(CustomFiles)" DestinationFolder="C:\Users\Administrator\AppData\Roaming\r2modmanPlus-local\LethalCompany\profiles\Modding\BepInEx\plugins\Doomnik-AHIT_Plushies" SkipUnchangedFiles="True" ContinueOnError="False" />
+  </Target>
+
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>C:\Users\Administrator\AppData\Roaming\r2modmanPlus-local\LethalCompany\profiles\Chazs even bigger modpack that works\BepInEx\core\0Harmony.dll</HintPath>

@@ -1,3 +1,9 @@
+## 0.5.5
+
+Nerfed default sell prices for all plushies as they seemed a bit too high. Delete the config file if you want to quickly reset all values to default.
+
+Buffed time piece default spawn rates and nerfed the default damage slightly as the item was a bit too rare.
+
 ## 0.5.4
 
 Revert floor offset as it caused plushies to clip through the ship floor
